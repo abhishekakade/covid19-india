@@ -1,0 +1,242 @@
+header {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0px;
+  background-color: transparent;
+  z-index: 11;
+  width: 100%;
+  height: auto;
+  min-height: calc(2rem + 20px);
+  /* transform: translateY(0px); */
+  filter: none !important;
+  pointer-events: auto !important;
+  user-select: auto !important;
+  padding: 0.5rem 1rem;
+  /* transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s; */
+  transition: 0.2s;
+}
+
+.hide-header-navbar {
+  top: -120px;
+}
+
+.show-header-navbar {
+  background-color: #0a192f;
+  background-color: #041328;
+  border-bottom: 1px solid #000000;
+  box-shadow: 0 10px 20px 10px #0f0f0f;
+}
+
+#navbar {
+  display: flex;
+  justify-content: flex-end;
+  /* padding: 1rem; */
+}
+
+#brand {
+  font-size: 1.5rem;
+  // padding: 1rem;
+  font-family: "Ubuntu Mono", monospace;
+  text-decoration: none;
+  color: aliceblue;
+  color: #dddddd;
+}
+#nav-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+#nav-list li:first-child {
+  margin-right: auto;
+}
+
+#nav-list .navlinks {
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-family: "Ubuntu Mono", monospace;
+  text-decoration: none;
+  // color: #17b614;
+  // color: #44ab42;
+  color: #bbbbdd;
+  transition: 0.5s;
+}
+
+#nav-list .navlinks:hover {
+  // color: #4fcb4d;
+  color: #dddddd;
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+  #nav-toggle {
+    display: none;
+    translate: all 1s;
+  }
+
+  #nav-list li {
+    margin: 0;
+  }
+  #nav-list {
+    /* transition: all 0.3s; */
+    /* -moz-transition: all 0s; */
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav-toggle:active {
+    border: 1px solid white;
+  }
+
+  #nav-toggle.animate-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1.5rem;
+  }
+
+  #nav-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    box-sizing: border-box;
+    width: 30px;
+    height: 20px;
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+    margin: auto 0 auto auto;
+    transform: rotate(0deg);
+    transition: 0.2s ease-in-out;
+    -moz-transition: 0s;
+  }
+
+  #nav-list li {
+    margin: 1rem;
+  }
+
+  #nav-list li:first-child {
+    margin: 0;
+  }
+
+  #nav-list.active {
+    // padding: 1rem;
+    width: 300px;
+  }
+
+  #nav-toggle:focus {
+    outline: none;
+  }
+
+  #nav-toggle:focus * {
+    box-shadow: 0 0 0 1px #17b614;
+    background: #17b614 !important;
+  }
+
+  #nav-toggle .line {
+    margin: 0;
+    padding: 0;
+    height: 2px;
+    width: 100%;
+    /* margin: 5px; */
+    background: #17b614;
+
+    display: block;
+    /* position: absolute; */
+    position: fixed;
+    border-radius: 10px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.2s ease-in-out;
+    -moz-transition: 0s;
+  }
+
+  #nav-toggle .line:nth-child(1) {
+    top: 0px;
+  }
+  #nav-toggle .line:nth-child(2) {
+    top: 8px;
+  }
+  #nav-toggle .line:nth-child(3) {
+    top: 16px;
+  }
+
+  #nav-toggle.animate-toggle .line:nth-child(1) {
+    top: 8px;
+    transform: rotate(135deg);
+  }
+  #nav-toggle.animate-toggle .line:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+  }
+  #nav-toggle.animate-toggle .line:nth-child(3) {
+    top: 8px;
+    transform: rotate(-135deg);
+  }
+
+  nav h1 {
+    font-size: 1.1rem !important;
+  }
+
+  #nav-list {
+    z-index: 5;
+    width: 0;
+    margin: auto;
+    padding: 0;
+    /* position: absolute; */
+    position: fixed;
+    right: 0;
+    top: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    -moz-transition: all 0s;
+    text-align: center;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.87);
+    // padding-bottom: 15vh;
+  }
+
+  #nav-list * {
+    opacity: 0;
+  }
+  #nav-list.active * {
+    opacity: 1;
+  }
+
+  #nav-list li .navlinks {
+    font-size: 1.1rem;
+    color: #ccd6f6;
+    color: #17b614;
+    overflow: hidden;
+    transition: color 1s;
+    -moz-transition: color 0s;
+  }
+
+  #nav-list li a:hover {
+    color: white;
+    margin: 1rem;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #nav-list.active li .navlinks {
+    font-size: 1.5rem;
+  }
+  #nav-list.active {
+    width: 100vw !important;
+  }
+}

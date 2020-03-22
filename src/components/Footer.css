@@ -1,0 +1,15 @@
+footer {
+  padding: 1rem 0;
+  background-color: #121212;
+  text-align: center;
+  color: #a8b2d1;
+}
+
+.profile-link {
+  color: #ccccee;
+}
+
+.profile-link:hover {
+  color: #ddddff;
+}
+/*# sourceMappingURL=Footer.css.map */

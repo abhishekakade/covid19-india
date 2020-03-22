@@ -1,0 +1,108 @@
+ul li {
+  padding: 1rem;
+  list-style: none;
+  font-family: "Roboto", sans-serif;
+}
+
+ul li .stats-list {
+  padding: 0;
+}
+
+#india {
+  margin: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+#india .stats-list {
+  padding: 0;
+}
+
+#india li {
+  font-size: 1.5rem;
+}
+
+#india .country-india {
+  text-align: center;
+  color: #bbbbdd;
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#india .confirmed-cases-india {
+  color: gold;
+}
+
+#india .active-cases-india {
+  color: cornflowerblue;
+}
+
+#india .recovered-cases-india {
+  color: #17b614;
+}
+
+#india .deaths-india {
+  color: crimson;
+}
+
+#india .last-updated {
+  color: lightslategrey;
+  font-size: 1.15rem;
+}
+
+#india .india-numbers {
+  color: #bbbbdd;
+}
+
+.state-name {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #bbbbdd;
+}
+
+.states-stats-list {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+}
+
+.states-stats-list .confirmed-cases {
+  color: gold;
+}
+
+.states-stats-list .active-cases {
+  color: cornflowerblue;
+}
+
+.states-stats-list .recovered-cases {
+  color: #17b614;
+}
+
+.states-stats-list .deaths {
+  color: crimson;
+}
+
+.states-stats-list .last-updated {
+  color: lightslategrey;
+  font-size: 1.15rem;
+}
+
+.states-stats-list .india-numbers {
+  color: #bbbbdd;
+}
+
+@media screen and (max-width: 480px) {
+  #india {
+    margin: 1rem;
+    margin-top: 1rem;
+  }
+  #india li {
+    font-size: 1.35rem;
+  }
+  .states-stats-list {
+    padding: 1rem;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+}
+/*# sourceMappingURL=Stats.css.map */
