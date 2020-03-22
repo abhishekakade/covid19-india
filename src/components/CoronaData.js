@@ -27,7 +27,7 @@ export const CoronaData = () => {
     fetchData()
   }, [])
 
-  console.log("Coronadata mounted")
+  // console.log("Coronadata mounted")
   // console.log(statewiseData)
   // console.log(indiaData)
 
