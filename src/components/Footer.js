@@ -15,6 +15,18 @@ export const Footer = () => {
           Abhishek
         </a>
       </p>
+      <p>
+        API by{" "}
+        <a
+          href="https://github.com/covid19india/covid19india"
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+          aria-label="covid19india GitHub repository"
+          className="tooltip profile-link"
+        >
+          covid19india
+        </a>
+      </p>
     </footer>
   )
 }
