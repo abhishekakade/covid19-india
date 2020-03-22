@@ -1,5 +1,6 @@
 {
   "name": "covid19-india",
+  "homepage": "https://abhishekakade.github.io/covid19-india",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,6 +8,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "d3": "^5.15.0",
+    "gh-pages": "^2.2.0",
     "node-sass": "^4.13.1",
     "react": "^16.13.1",
     "react-countup": "^4.3.3",
@@ -15,6 +17,8 @@
     "react-spring": "^8.0.27"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
