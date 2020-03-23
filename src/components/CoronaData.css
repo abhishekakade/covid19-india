@@ -61,4 +61,12 @@
     padding: 0.65rem 1rem;
   }
 }
+
+@media screen and (max-width: 380px) {
+  #states-container {
+    display: block;
+    width: auto;
+    margin: 1rem;
+  }
+}
 /*# sourceMappingURL=CoronaData.css.map */

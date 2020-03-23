@@ -82,8 +82,8 @@ export const CoronaData = () => {
       {statewiseData && showStates ? (
         <>
           <p className="show-states-note">
-            (Note: states without any reported/confirmed COVID-19 cases not
-            displayed)
+            (Note: states/union territories without any reported/confirmed
+            COVID-19 cases not displayed)
           </p>
           <div id="states-container">{renderIndianStatesData()}</div>
         </>

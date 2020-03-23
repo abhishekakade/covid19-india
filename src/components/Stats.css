@@ -87,10 +87,11 @@ ul li .stats-list {
   font-size: 1.5rem;
   text-align: center;
   color: #bbbbdd;
+  text-transform: uppercase;
 }
 
 .states-stats-list {
-  padding: 1rem 2rem;
+  padding: 1rem;
   margin: 1rem;
   font-size: 1.2rem;
   border: 1px solid #bbbbdd;
@@ -124,7 +125,7 @@ ul li .stats-list {
   color: #bbbbdd;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 550px) {
   #india {
     margin: 1rem;
     margin-top: 1rem;
@@ -136,10 +137,13 @@ ul li .stats-list {
     font-size: 0.9rem;
   }
   .states-stats-list {
-    padding: 1rem;
+    padding: 1rem 0.5rem;
     font-size: 1.1rem;
-    margin: 0;
-    border-radius: 0;
+    margin: 0.25rem;
+    border-radius: 5px;
+  }
+  .state-name {
+    font-size: 1.35rem;
   }
 }
 /*# sourceMappingURL=Stats.css.map */
