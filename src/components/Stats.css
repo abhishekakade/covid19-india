@@ -1,5 +1,5 @@
 ul li {
-  padding: 0.5rem;
+  padding: 0.25rem;
   list-style: none;
   font-family: "Roboto", sans-serif;
 }
@@ -8,26 +8,58 @@ ul li .stats-list {
   padding: 0;
 }
 
-#india {
-  margin: 2rem;
-  margin-top: 1rem;
+.last-updated {
+  color: lightslategrey;
+  font-size: 1.15rem;
+  margin: auto;
+  margin-top: -1rem;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
-#india .stats-list {
-  padding: 0;
-}
-
-#india li {
-  font-size: 1.5rem;
-}
-
-#india .country-india {
+.country-india {
   text-align: center;
   color: #bbbbdd;
   text-transform: uppercase;
   font-size: 2rem;
   margin-bottom: 1rem;
+}
+
+#india {
+  margin: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+#india .stats-list {
+  padding: 0;
+  text-align: center;
+}
+
+#india .numbers {
+  color: #bbbbdd;
+}
+
+#india .horizontal-rule {
+  width: 8rem;
+  margin: 0.75rem auto 1.5rem auto;
+}
+
+#india .day {
+  color: #bbbbdd;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+#india li {
+  font-size: 1.5rem;
 }
 
 #india .confirmed-cases-india {
@@ -44,11 +76,6 @@ ul li .stats-list {
 
 #india .deaths-india {
   color: crimson;
-}
-
-#india .last-updated {
-  color: lightslategrey;
-  font-size: 1.15rem;
 }
 
 #india .india-numbers {

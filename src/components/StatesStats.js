@@ -2,7 +2,7 @@ import React from "react"
 import CountUp from "react-countup"
 import "./Stats.css"
 
-export const Stats = ({ obj }) => {
+export const StatesStats = ({ obj }) => {
   const { active, confirmed, deaths, lastupdatedtime, recovered, state } = obj
 
   if (state === "Total") {
@@ -16,22 +16,22 @@ export const Stats = ({ obj }) => {
           </li>
           <li className="confirmed-cases-india">
             Confirmed: {/* <span className="india-numbers"> */}
-            <CountUp end={parseInt(confirmed)} useEasing={false} />
+            <CountUp end={parseInt(confirmed)} useEasing={false} duration={1} />
             {/* </span> */}
           </li>
           <li className="active-cases-india">
             Active: {/* <span className="india-numbers"> */}
-            <CountUp end={parseInt(active)} useEasing={false} />
+            <CountUp end={parseInt(active)} useEasing={false} duration={1} />
             {/* </span> */}
           </li>
           <li className="recovered-cases-india">
             Recovered: {/* <span className="india-numbers"> */}
-            <CountUp end={parseInt(recovered)} useEasing={false} />
+            <CountUp end={parseInt(recovered)} useEasing={false} duration={1} />
             {/* </span> */}
           </li>
           <li className="deaths-india">
             Deaths: {/* <span className="india-numbers"> */}
-            <CountUp end={parseInt(deaths)} useEasing={false} />
+            <CountUp end={parseInt(deaths)} useEasing={false} duration={1} />
             {/* </span> */}
           </li>
           <li className="last-updated">Last Updated: {lastupdatedtime}</li>

@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react"
-import { Stats } from "./Stats"
+import { StatesStats } from "./StatesStats"
+import { IndiaStats } from "./IndiaStats"
 import "./CoronaData.css"
 
 export const CoronaData = () => {
+  // const [statewiseData, setStatewiseData] = useState()
+  const [indiaCovidData, setIndiaCovidData] = useState()
   const [statewiseData, setStatewiseData] = useState()
   const [indiaData, setIndiaData] = useState()
   const [showStates, setShowStates] = useState(false)
@@ -13,13 +16,13 @@ export const CoronaData = () => {
     async function fetchData() {
       try {
         const response = await fetch(api)
-        // setLoading(true)
-
-        const data = await response
-          .json()
-          .then(({ statewise }) => [...statewise])
-        setStatewiseData(data)
-        setIndiaData(data[0])
+        const data = await response.json()
+        setIndiaCovidData(data)
+        setStatewiseData(data.statewise)
+        setIndiaData(data.statewise[0])
+        //   .then(({ statewise }) => [...statewise])
+        // setStatewiseData(data)
+        // setIndiaData(data[0])
       } catch (err) {
         // setLoading(null)
         console.log("Error fetching: ", err)
@@ -31,29 +34,43 @@ export const CoronaData = () => {
 
   // console.log("Coronadata mounted")
   // console.log(statewiseData)
-  // console.log(indiaData)
+  // console.log(indiaCovidData)
 
-  const renderIndiaData = array => {
-    return <Stats key="India" obj={array} />
+  const renderIndiaData = indiaDataStateObj => {
+    if (indiaData) {
+      // console.log(indiaData)
+      // let yesterday
+      let pastDataArr = Object.values(indiaCovidData.cases_time_series)
+      // console.log(pastDataArr)
+      return (
+        <IndiaStats
+          key="India"
+          latest={indiaDataStateObj}
+          pastDataArr={pastDataArr}
+        />
+      )
+    }
   }
 
   function renderIndianStatesData() {
-    let statewiseInfo
-    if (statewiseData) {
-      let statewiseArr = Object.values(statewiseData)
+    // console.log(indiaCovidData.cases_time_series)
 
-      statewiseInfo = statewiseArr.map((item, index) => {
-        if (index > 0) {
-          return <Stats key={index} obj={item} />
-        }
-      })
+    let statewiseInfo
+    if (indiaCovidData && statewiseData) {
+      statewiseInfo = statewiseData.map((item, index) =>
+        index > 0 ? <StatesStats key={index} obj={item} /> : null
+      )
     }
     return statewiseInfo
   }
 
   return (
     <div>
-      {indiaData ? renderIndiaData(indiaData) : <h3>loading...</h3>}
+      {indiaData ? (
+        renderIndiaData(indiaData)
+      ) : (
+        <h3 style={{ textAlign: "center" }}>loading...</h3>
+      )}
       <button
         id="states-toggle-button"
         onClick={() => {
