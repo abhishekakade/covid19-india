@@ -29,10 +29,10 @@ export const IndiaStats = ({ latest, pastDataArr }) => {
   }
   const allPreviousData = getPreviousData(pastDataArr)
   const {
-    dailyconfirmed,
-    dailydeceased,
-    dailyrecovered,
-    date,
+    // dailyconfirmed,
+    // dailydeceased,
+    // dailyrecovered,
+    // date,
     totalconfirmed,
     totaldeceased,
     totalrecovered

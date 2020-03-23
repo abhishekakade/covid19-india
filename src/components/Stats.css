@@ -26,7 +26,7 @@ ul li .stats-list {
 }
 
 #india {
-  margin: 2rem;
+  margin: auto;
   margin-top: 1rem;
   margin-bottom: 2rem;
   display: -ms-grid;
@@ -36,6 +36,7 @@ ul li .stats-list {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+  max-width: 60rem;
 }
 
 #india .stats-list {
