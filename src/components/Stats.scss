@@ -1,5 +1,5 @@
 ul li {
-  padding: 1rem;
+  padding: 0.5rem;
   list-style: none;
   font-family: "Roboto", sans-serif;
 
@@ -64,7 +64,12 @@ ul li {
 
 .states-stats-list {
   padding: 1rem 2rem;
+  margin: 1rem;
   font-size: 1.2rem;
+  border: 1px solid #bbbbdd;
+  border-radius: 5px;
+  width: auto;
+  text-align: center;
 
   .confirmed-cases {
     color: gold;
@@ -101,11 +106,16 @@ ul li {
     li {
       font-size: 1.35rem;
     }
+
+    .last-updated {
+      font-size: 0.9rem;
+    }
   }
 
   .states-stats-list {
     padding: 1rem;
     font-size: 1.1rem;
     margin: 0;
+    border-radius: 0;
   }
 }

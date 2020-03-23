@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react"
 import { Stats } from "./Stats"
+import "./CoronaData.css"
 
 export const CoronaData = () => {
   const [statewiseData, setStatewiseData] = useState()
   const [indiaData, setIndiaData] = useState()
+  const [showStates, setShowStates] = useState(false)
   // const [loading, setLoading] = useState(false)
 
   const api = "https://api.covid19india.org/data.json"
@@ -31,30 +33,44 @@ export const CoronaData = () => {
   // console.log(statewiseData)
   // console.log(indiaData)
 
-  function renderCoronaStats() {
+  const renderIndiaData = array => {
+    return <Stats key="India" obj={array} />
+  }
+
+  function renderIndianStatesData() {
     let statewiseInfo
-    let indiaInfo
     if (statewiseData) {
       let statewiseArr = Object.values(statewiseData)
-      let indiaStats = statewiseArr[0]
-      // console.log(statewiseArr)
 
       statewiseInfo = statewiseArr.map((item, index) => {
         if (index > 0) {
           return <Stats key={index} obj={item} />
         }
       })
-
-      indiaInfo = <Stats key="India" obj={indiaStats} />
     }
-    return [indiaInfo, statewiseInfo]
+    return statewiseInfo
   }
 
   return (
     <div>
-      {/* <ul> */}
-      {statewiseData ? renderCoronaStats() : <h3>loading...</h3>}
-      {/* </ul> */}
+      {indiaData ? renderIndiaData(indiaData) : <h3>loading...</h3>}
+      <button
+        id="states-toggle-button"
+        onClick={() => {
+          showStates ? setShowStates(false) : setShowStates(true)
+        }}
+      >
+        {showStates ? "Hide State wise Info" : "Show State wise Info"}
+      </button>
+      {statewiseData && showStates ? (
+        <>
+          <p className="show-states-note">
+            (Note: states without any reported/confirmed COVID-19 cases not
+            displayed)
+          </p>
+          <div id="states-container">{renderIndianStatesData()}</div>
+        </>
+      ) : null}
     </div>
   )
 }

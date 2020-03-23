@@ -1,5 +1,5 @@
 ul li {
-  padding: 1rem;
+  padding: 0.5rem;
   list-style: none;
   font-family: "Roboto", sans-serif;
 }
@@ -63,7 +63,12 @@ ul li .stats-list {
 
 .states-stats-list {
   padding: 1rem 2rem;
+  margin: 1rem;
   font-size: 1.2rem;
+  border: 1px solid #bbbbdd;
+  border-radius: 5px;
+  width: auto;
+  text-align: center;
 }
 
 .states-stats-list .confirmed-cases {
@@ -99,10 +104,14 @@ ul li .stats-list {
   #india li {
     font-size: 1.35rem;
   }
+  #india .last-updated {
+    font-size: 0.9rem;
+  }
   .states-stats-list {
     padding: 1rem;
     font-size: 1.1rem;
     margin: 0;
+    border-radius: 0;
   }
 }
 /*# sourceMappingURL=Stats.css.map */

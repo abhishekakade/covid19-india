@@ -1,0 +1,64 @@
+#states-toggle-button {
+  display: block;
+  margin: 1rem auto;
+  font-family: "Ubuntu Mono", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  background-color: #121212;
+  color: #bbbbdd;
+  padding: 0.75rem 1.5rem;
+  outline: none;
+  border: 2px solid #bbbbdd;
+  border-radius: 5px;
+}
+
+.show-states-note {
+  margin-top: 3rem;
+  padding: 0 2rem;
+  color: #bbbbdd;
+  font-size: 1rem;
+  text-align: center;
+}
+
+#states-container {
+  max-width: 1100px;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+@media screen and (max-width: 768px) {
+  #states-toggle-button {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid #bbbbdd;
+  }
+  #states-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    margin: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #states-toggle-button {
+    font-size: 1.1rem;
+    font-weight: 400;
+    padding: 0.65rem 1rem;
+  }
+}
+/*# sourceMappingURL=CoronaData.css.map */
