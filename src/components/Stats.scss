@@ -81,7 +81,7 @@ ul li {
 }
 
 .state-name {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   text-align: center;
   color: #bbbbdd;
   text-transform: uppercase;
@@ -124,7 +124,6 @@ ul li {
 
 @media screen and (max-width: 550px) {
   #india {
-    // padding: 1rem;
     margin: 1rem;
     margin-top: 1rem;
 
@@ -140,12 +139,20 @@ ul li {
   .states-stats-list {
     padding: 1rem 0.5rem;
     font-size: 1.1rem;
-    // margin: 0;
     margin: 0.25rem;
     border-radius: 5px;
   }
 
   .state-name {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .states-stats-list {
+    margin: 0;
+  }
+  .state-name {
+    font-size: 1.2rem;
   }
 }

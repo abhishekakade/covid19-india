@@ -64,8 +64,15 @@
 
 @media screen and (max-width: 380px) {
   #states-container {
+    margin: 0.25rem;
+  }
+}
+
+@media screen and (max-width: 355px) {
+  #states-container {
     display: block;
-    width: auto;
+  }
+  #states-container .states-stats-list {
     margin: 1rem;
   }
 }

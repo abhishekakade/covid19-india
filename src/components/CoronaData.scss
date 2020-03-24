@@ -52,6 +52,7 @@
     margin: 0.5rem;
   }
 }
+
 @media screen and (max-width: 480px) {
   #states-toggle-button {
     font-size: 1.1rem;
@@ -61,9 +62,22 @@
 }
 
 @media screen and (max-width: 380px) {
+  // #states-container {
+  //   display: block;
+  //   width: auto;
+  //   margin: 1rem;
+  // }
+  #states-container {
+    margin: 0.25rem;
+  }
+}
+
+@media screen and (max-width: 355px) {
   #states-container {
     display: block;
-    width: auto;
-    margin: 1rem;
+
+    .states-stats-list {
+      margin: 1rem;
+    }
   }
 }

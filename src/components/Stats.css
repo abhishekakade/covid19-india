@@ -84,7 +84,7 @@ ul li .stats-list {
 }
 
 .state-name {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   text-align: center;
   color: #bbbbdd;
   text-transform: uppercase;
@@ -143,7 +143,16 @@ ul li .stats-list {
     border-radius: 5px;
   }
   .state-name {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .states-stats-list {
+    margin: 0;
+  }
+  .state-name {
+    font-size: 1.2rem;
   }
 }
 /*# sourceMappingURL=Stats.css.map */
