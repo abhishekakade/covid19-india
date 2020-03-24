@@ -48,9 +48,25 @@ ul li .stats-list {
   color: #bbbbdd;
 }
 
+#india .arrow {
+  vertical-align: middle;
+  height: 1.35rem;
+  width: 1.35rem;
+  margin-top: -4px;
+  margin-right: -4px;
+}
+
+#india .good {
+  color: #17b614;
+}
+
+#india .bad {
+  color: crimson;
+}
+
 #india .horizontal-rule {
   width: 8rem;
-  margin: 0.75rem auto 1.5rem auto;
+  margin: 0.5rem auto 1rem auto;
 }
 
 #india .day {

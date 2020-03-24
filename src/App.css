@@ -2,12 +2,12 @@
   margin: auto;
   text-align: center;
   font-family: "Ubuntu Mono";
-  margin-top: 8rem;
+  margin-top: 7rem;
 }
 
 @media screen and (max-width: 480px) {
   #title {
-    margin-top: 6rem;
+    margin-top: 5rem;
     font-size: 1.5rem;
   }
 }

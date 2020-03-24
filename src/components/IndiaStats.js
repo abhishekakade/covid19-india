@@ -1,5 +1,6 @@
 import React from "react"
 import CountUp from "react-countup"
+import { ArrowUp, ArrowDown } from "styled-icons/foundation"
 import "./Stats.css"
 
 export const IndiaStats = ({ latest, pastDataArr }) => {
@@ -38,6 +39,59 @@ export const IndiaStats = ({ latest, pastDataArr }) => {
     totalrecovered
   } = allPreviousData[0]
 
+  // Difference Variables
+
+  let confirmedDifference = parseInt(confirmed) - parseInt(totalconfirmed)
+  let activeDifference =
+    parseInt(active) - parseInt(totalconfirmed - totaldeceased - totalrecovered)
+  let recoveredDifference = parseInt(recovered - totalrecovered)
+  let deathsDifference = parseInt(deaths - totaldeceased)
+
+  // confirmedDifference = 0
+  // activeDifference = 0
+  // recoveredDifference = 0
+  // deathsDifference = 0
+
+  // TODO: Handle deaths, confirmed better as they cannot decrease
+
+  function differenceNumber(value, isMoreBad) {
+    if (value === 0) {
+      return <span className="good">(0)</span>
+    } else if (isMoreBad === true) {
+      if (value > 0) {
+        return (
+          <span className="bad">
+            ( <CountUp end={value} useEasing={false} duration={1} />
+            <ArrowUp className="arrow" /> )
+          </span>
+        )
+      } else if (value < 0) {
+        return (
+          <span className="good">
+            ( <CountUp end={value} useEasing={false} duration={1} />
+            <ArrowDown className="arrow" /> )
+          </span>
+        )
+      }
+    } else if (isMoreBad === false) {
+      if (value > 0) {
+        return (
+          <span className="good">
+            ( <CountUp end={value} useEasing={false} duration={1} />
+            <ArrowUp className="arrow" /> )
+          </span>
+        )
+      } else if (value < 0) {
+        return (
+          <span className="bad">
+            ( <CountUp end={value} useEasing={false} duration={1} />
+            <ArrowDown className="arrow" /> )
+          </span>
+        )
+      }
+    } else return null
+  }
+
   if (state === "Total") {
     return (
       <>
@@ -50,13 +104,15 @@ export const IndiaStats = ({ latest, pastDataArr }) => {
                 end={parseInt(confirmed)}
                 useEasing={false}
                 duration={1}
-              />
+              />{" "}
+              {differenceNumber(confirmedDifference, true)}
             </li>
             <li className="confirmed-cases-india">Confirmed</li>
             <hr className="horizontal-rule" />
 
             <li className="numbers">
-              <CountUp end={parseInt(active)} useEasing={false} duration={1} />
+              <CountUp end={parseInt(active)} useEasing={false} duration={1} />{" "}
+              {differenceNumber(activeDifference, true)}
             </li>
             <li className="active-cases-india">Active</li>
             <hr className="horizontal-rule" />
@@ -66,12 +122,14 @@ export const IndiaStats = ({ latest, pastDataArr }) => {
                 end={parseInt(recovered)}
                 useEasing={false}
                 duration={1}
-              />
+              />{" "}
+              {differenceNumber(recoveredDifference, false)}
             </li>
             <li className="recovered-cases-india">Recovered </li>
             <hr className="horizontal-rule" />
             <li className="numbers">
-              <CountUp end={parseInt(deaths)} useEasing={false} duration={1} />
+              <CountUp end={parseInt(deaths)} useEasing={false} duration={1} />{" "}
+              {differenceNumber(deathsDifference, true)}
             </li>
             <li className="deaths-india">Deaths</li>
           </ul>
