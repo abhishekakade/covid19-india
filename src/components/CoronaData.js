@@ -13,8 +13,7 @@ const CoronaData = () => {
   const [showStates, setShowStates] = useState(false)
   const [display, setDisplay] = useState("none")
   const handleChange = e => {
-    console.log(e.target.value)
-
+    // console.log(e.target.value)
     setSearchTerm(e.target.value.toLowerCase())
   }
 
@@ -70,14 +69,14 @@ const CoronaData = () => {
     }
     return statewiseInfo
   }
-  console.log(statewiseData)
+  // console.log(statewiseData)
 
   const filterData = term => {
     if (statewiseData) {
       let statesWithoutTotal = statewiseData.filter(
         stateArr => !stateArr.state.toLowerCase().includes("total")
       )
-      console.log(statesWithoutTotal)
+      // console.log(statesWithoutTotal)
 
       let anArr = []
       statesWithoutTotal.filter(arritem => {
