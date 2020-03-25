@@ -111,7 +111,9 @@ ul li {
   border: 1px solid #bbbbdd;
   border-radius: 5px;
   width: auto;
+  max-width: 24ch;
   text-align: center;
+  flex: 1 0 25%;
 
   .confirmed-cases {
     color: gold;
@@ -145,7 +147,7 @@ ul li {
     margin-top: 1rem;
 
     li {
-      font-size: 1.35rem;
+      font-size: 1.25rem;
     }
 
     .last-updated {
@@ -158,6 +160,8 @@ ul li {
     font-size: 1.1rem;
     margin: 0.25rem;
     border-radius: 5px;
+    flex: 1 0 35%;
+    max-width: 20ch;
   }
 
   .state-name {
@@ -167,7 +171,7 @@ ul li {
 
 @media screen and (max-width: 375px) {
   .states-stats-list {
-    margin: 0;
+    margin: 0.15rem;
   }
   .state-name {
     font-size: 1.2rem;

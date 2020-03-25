@@ -13,6 +13,13 @@
   border-radius: 5px;
 }
 
+#states-search {
+  padding: 0.5rem 0.75rem;
+  margin: 1rem auto;
+  background-color: #121212;
+  color: darkgray;
+}
+
 .show-states-note {
   color: lightslategrey;
   font-size: 1.15rem;
@@ -23,16 +30,19 @@
 
 #states-container {
   max-width: 1100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: auto;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (auto)[3];
-      grid-template-columns: repeat(3, auto);
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
 }
 
 @media screen and (max-width: 768px) {
@@ -43,13 +53,15 @@
     border: 1px solid #bbbbdd;
   }
   #states-container {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     margin: 0.5rem;
   }
 }
@@ -64,16 +76,17 @@
 
 @media screen and (max-width: 380px) {
   #states-container {
-    margin: 0.25rem;
+    margin: 2rem 0.25rem;
   }
 }
 
 @media screen and (max-width: 355px) {
   #states-container {
     display: block;
+    margin: 2rem auto;
   }
   #states-container .states-stats-list {
-    margin: 1rem;
+    margin: 1rem auto;
   }
 }
 /*# sourceMappingURL=CoronaData.css.map */

@@ -113,7 +113,11 @@ ul li .stats-list {
   border: 1px solid #bbbbdd;
   border-radius: 5px;
   width: auto;
+  max-width: 24ch;
   text-align: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 25%;
+          flex: 1 0 25%;
 }
 
 .states-stats-list .confirmed-cases {
@@ -147,7 +151,7 @@ ul li .stats-list {
     margin-top: 1rem;
   }
   #india li {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
   }
   #india .last-updated {
     font-size: 0.9rem;
@@ -157,6 +161,10 @@ ul li .stats-list {
     font-size: 1.1rem;
     margin: 0.25rem;
     border-radius: 5px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 35%;
+            flex: 1 0 35%;
+    max-width: 20ch;
   }
   .state-name {
     font-size: 1.25rem;
@@ -165,7 +173,7 @@ ul li .stats-list {
 
 @media screen and (max-width: 375px) {
   .states-stats-list {
-    margin: 0;
+    margin: 0.15rem;
   }
   .state-name {
     font-size: 1.2rem;
