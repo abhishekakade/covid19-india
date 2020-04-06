@@ -4,14 +4,7 @@ import { ArrowUp, ArrowDown } from "styled-icons/foundation"
 import "./Stats.css"
 
 export const IndiaStats = ({ latest, pastDataArr }) => {
-  const {
-    active,
-    confirmed,
-    deaths,
-    lastupdatedtime,
-    recovered,
-    state
-  } = latest
+  let { active, confirmed, deaths, lastupdatedtime, recovered, state } = latest
 
   // let pastDataArrLen = pastDataArr.length
   // console.log(pastDataArr[pastDataArrLen - 2].dailyconfirmed)
@@ -29,14 +22,14 @@ export const IndiaStats = ({ latest, pastDataArr }) => {
     }
   }
   const allPreviousData = getPreviousData(pastDataArr)
-  const {
+  let {
     // dailyconfirmed,
     // dailydeceased,
     // dailyrecovered,
     // date,
     totalconfirmed,
     totaldeceased,
-    totalrecovered
+    totalrecovered,
   } = allPreviousData[0]
 
   // Difference Variables
@@ -50,9 +43,28 @@ export const IndiaStats = ({ latest, pastDataArr }) => {
   // confirmedDifference = 0
   // activeDifference = 0
   // recoveredDifference = 0
-  // deathsDifference = 0
 
-  // TODO: Handle deaths, confirmed better as they cannot decrease
+  // To handle deaths, confirmed better as they cannot decrease
+
+  if (deathsDifference < 0) {
+    deathsDifference = 0
+
+    if (deaths < totaldeceased) {
+      totaldeceased = deaths
+    } else if (deaths > totaldeceased) {
+      deaths = totaldeceased
+    }
+  }
+
+  if (confirmedDifference < 0) {
+    confirmedDifference = 0
+
+    if (confirmed < totalconfirmed) {
+      totalconfirmed = confirmed
+    } else if (confirmed > totalconfirmed) {
+      confirmed = totalconfirmed
+    }
+  }
 
   function differenceNumber(value, isMoreBad) {
     if (value === 0) {
