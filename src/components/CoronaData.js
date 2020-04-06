@@ -12,7 +12,7 @@ const CoronaData = () => {
   const [searchResults, setSearchResults] = React.useState([])
   const [showStates, setShowStates] = useState(false)
   const [display, setDisplay] = useState("none")
-  const handleChange = e => {
+  const handleChange = (e) => {
     // console.log(e.target.value)
     setSearchTerm(e.target.value.toLowerCase())
   }
@@ -46,7 +46,7 @@ const CoronaData = () => {
 
   // console.log("Coronadata mounted")
 
-  const renderIndiaData = indiaDataStateObj => {
+  const renderIndiaData = (indiaDataStateObj) => {
     if (indiaData) {
       let pastDataArr = Object.values(indiaCovidData.cases_time_series)
       // console.log(pastDataArr)
@@ -71,15 +71,15 @@ const CoronaData = () => {
   }
   // console.log(statewiseData)
 
-  const filterData = term => {
+  const filterData = (term) => {
     if (statewiseData) {
       let statesWithoutTotal = statewiseData.filter(
-        stateArr => !stateArr.state.toLowerCase().includes("total")
+        (stateArr) => !stateArr.state.toLowerCase().includes("total")
       )
       // console.log(statesWithoutTotal)
 
       let anArr = []
-      statesWithoutTotal.filter(arritem => {
+      statesWithoutTotal.filter((arritem) => {
         if (arritem.state.toLowerCase().includes(term)) {
           anArr.push(arritem)
         }
@@ -110,10 +110,12 @@ const CoronaData = () => {
       </button>
       {statewiseData ? (
         <>
-          <p className="show-states-note">
-            (Note: states/union territories without any reported/confirmed
-            COVID-19 cases not displayed)
-          </p>
+          {showStates && (
+            <p className="show-states-note">
+              (Note: states/union territories without any reported/confirmed
+              COVID-19 cases not displayed)
+            </p>
+          )}
           <input
             id="states-search"
             type="text"
@@ -130,7 +132,7 @@ const CoronaData = () => {
               outline: "none",
               border: "2px solid #bbbbdd",
               borderRadius: "5px",
-              fontSize: "1.1rem"
+              fontSize: "1.1rem",
             }}
           />
           <div id="states-container">

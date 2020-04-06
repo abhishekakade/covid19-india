@@ -6,13 +6,13 @@ export const Footer = () => {
       <p>
         Developed by{" "}
         <a
-          href="https://github.com/abhishekakade"
+          href="https://abhishekakade.github.io/"
           target="_blank"
           rel="nofollow noopener noreferrer"
           aria-label="Abhishek's GitHub Profile"
           className="tooltip profile-link"
         >
-          Abhishek
+          Abhishek Kakade
         </a>
       </p>
       <p>

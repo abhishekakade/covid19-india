@@ -9,30 +9,22 @@ export const StatesStats = ({ obj }) => {
     return (
       <div id="india">
         <ul className="stats-list">
-          <li className="country-india">
-            {/* <span className="india-numbers"> */}
-            India
-            {/* </span> */}
-          </li>
+          <li className="country-india">India</li>
           <li className="confirmed-cases-india">
-            Confirmed: {/* <span className="india-numbers"> */}
+            Confirmed:
             <CountUp end={parseInt(confirmed)} useEasing={false} duration={1} />
-            {/* </span> */}
           </li>
           <li className="active-cases-india">
-            Active: {/* <span className="india-numbers"> */}
+            Active:
             <CountUp end={parseInt(active)} useEasing={false} duration={1} />
-            {/* </span> */}
           </li>
           <li className="recovered-cases-india">
-            Recovered: {/* <span className="india-numbers"> */}
+            Recovered:
             <CountUp end={parseInt(recovered)} useEasing={false} duration={1} />
-            {/* </span> */}
           </li>
           <li className="deaths-india">
-            Deaths: {/* <span className="india-numbers"> */}
+            Deaths:
             <CountUp end={parseInt(deaths)} useEasing={false} duration={1} />
-            {/* </span> */}
           </li>
           <li className="last-updated">Last Updated: {lastupdatedtime}</li>
         </ul>
