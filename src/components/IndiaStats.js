@@ -35,8 +35,6 @@ export const IndiaStats = ({ latest, pastDataArr }) => {
   // Difference Variables
 
   let confirmedDifference = parseInt(confirmed) - parseInt(totalconfirmed)
-  let activeDifference =
-    parseInt(active) - parseInt(totalconfirmed - totaldeceased - totalrecovered)
   let recoveredDifference = parseInt(recovered - totalrecovered)
   let deathsDifference = parseInt(deaths - totaldeceased)
 
@@ -65,6 +63,9 @@ export const IndiaStats = ({ latest, pastDataArr }) => {
       confirmed = totalconfirmed
     }
   }
+
+  let activeDifference =
+    parseInt(active) - parseInt(totalconfirmed - totaldeceased - totalrecovered)
 
   function differenceNumber(value, isMoreBad) {
     if (value === 0) {
